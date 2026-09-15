@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الدوريات الشهرية — مكتبة مدرسة الأمين (ب)</title>
+<meta name="description" content="أعداد الدورية الشهرية المعرفية لمكتبة مدرسة الأمين (ب)، مع إمكانية التحميل والقراءة.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  .issue-card {
+    display:grid; grid-template-columns: 220px 1fr; gap:28px;
+    background:#fff; border:1px solid var(--navy-10); border-radius:var(--radius-lg);
+    box-shadow:var(--shadow-card); padding:26px; margin-bottom:20px;
+  }
+  @media (max-width:700px){ .issue-card{ grid-template-columns:1fr; } }
+  .issue-cover {
+    background:var(--navy); border-radius:var(--radius-md); min-height:280px;
+    display:flex; flex-direction:column; justify-content:space-between; padding:18px; color:#fff;
+  }
+  .issue-cover .num { font-size:34px; font-weight:800; }
+  .issue-cover .meta { font-size:11px; opacity:.7; letter-spacing:1px; }
+  .chapters-list { list-style:none; padding:0; margin:16px 0 0; display:grid; gap:8px; }
+  .chapters-list li { font-size:13px; color:var(--navy-70); display:flex; gap:8px; align-items:flex-start; }
+  .chapters-list li b { color:var(--navy); font-weight:800; flex-shrink:0; }
+  .issue-actions { display:flex; gap:10px; margin-top:18px; flex-wrap:wrap; }
+  .upcoming-card {
+    border:1px dashed var(--navy-10); border-radius:var(--radius-lg); padding:22px;
+    display:flex; align-items:center; justify-content:space-between; gap:16px; color:var(--navy-45);
+  }
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">تخطي إلى المحتوى</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">م</span>
+      <span class="brand-text"><b>مكتبة مدرسة الأمين (ب)</b><span>إدارة شمال التعليمية - بورسعيد</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false">☰</button>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="periodicals.html" aria-current="page">الدوريات الشهرية</a></li>
+        <li><a href="catalog.html">فهرس الكتب</a></li>
+        <li><a href="news.html">أخبار المكتبة</a></li>
+        <li><a href="contact.html">تواصل معنا</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" style="padding-bottom:30px;">
+    <div class="wrap">
+      <div class="eyebrow"><span class="line"></span>دورية شهرية معرفية</div>
+      <h1>الدوريات <span class="accent">الشهرية</span></h1>
+      <p class="lead">عدد جديد كل شهر يناقش محورًا من محاور تطوير المكتبة المدرسية ودور أخصائي المكتبات، بقلم فريق مكتبة مدرسة الأمين (ب).</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+
+      <div class="issue-card">
+        <div class="issue-cover">
+          <div>
+            <div class="meta">العدد الأول</div>
+            <div class="num">سبتمبر<br>2026</div>
+          </div>
+          <div class="meta">مكتبة مدرسة الأمين (ب)</div>
+        </div>
+        <div>
+          <div class="tag">العدد الأول</div>
+          <h3 style="font-size:22px; margin-top:12px;">المكتبة المدرسية: بوابة المعرفة وصناعة المستقبل</h3>
+          <p style="color:var(--navy-70); font-size:14px; margin-top:8px;">
+            رؤية متجددة لدور المكتبة وأخصائي المكتبات في دعم العملية التعليمية وبناء مجتمع المعرفة.
+            العدد يضع الأساس النظري عبر ٦ محاور، على أن يتناول العدد القادم التطبيق العملي.
+          </p>
+
+          <ul class="chapters-list">
+            <li><b>١</b> تعريف المكتبة المدرسية</li>
+            <li><b>٢</b> من "أمين المكتبة" إلى "المرشد المعرفي"</li>
+            <li><b>٣</b> تطوير اسم المكتبة</li>
+            <li><b>٤</b> التطور ممكن دون عبء مالي</li>
+            <li><b>٥</b> مواكبة لتوجيهات القيادة وتطوير التعليم</li>
+            <li><b>٦</b> تعظيم الدور في ظل التطورات الحديثة</li>
+          </ul>
+
+          <div class="issue-actions">
+            <a class="btn btn-primary" href="alamin-periodical-issue-01.pdf" download>تحميل العدد PDF</a>
+            <a class="btn btn-outline" href="alamin-periodical-issue-01.pdf" target="_blank" rel="noopener">فتح للقراءة</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="upcoming-card">
+        <div>
+          <div style="font-weight:800; color:var(--navy);">العدد الثاني — قريبًا</div>
+          <div style="font-size:13px; margin-top:4px;">تطبيق عملي لما طرحناه نظريًا: خطوات تحويل المكتبة الحالية إلى مركز معرفي فاعل بأقل الإمكانات.</div>
+        </div>
+        <div class="tag">أكتوبر 2026</div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 مكتبة مدرسة الأمين (ب) - إدارة شمال التعليمية - بورسعيد. جميع الحقوق محفوظة.</p>
+    <ul class="footer-links">
+      <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="catalog.html">فهرس الكتب</a></li>
+      <li><a href="contact.html">تواصل معنا</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="assets/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>فهرس الكتب — مكتبة مدرسة الأمين (ب)</title>
+<meta name="description" content="ابحث وتصفح في فهرس كتب مكتبة مدرسة الأمين (ب) حسب العنوان أو المؤلف أو التصنيف.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  .filters {
+    display:flex; gap:12px; flex-wrap:wrap; margin-bottom:22px;
+  }
+  .filters input, .filters select {
+    font-family:inherit; font-size:14px; padding:11px 16px; border-radius:999px;
+    border:1px solid var(--navy-10); background:#fff; color:var(--navy);
+  }
+  .filters input { flex:1; min-width:220px; }
+  .filters input:focus, .filters select:focus { outline:2px solid var(--gold); outline-offset:1px; }
+
+  table.catalog { width:100%; border-collapse:collapse; background:#fff; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-card); }
+  table.catalog thead th {
+    background:var(--navy); color:#fff; text-align:right; font-size:12.5px; font-weight:700;
+    padding:13px 16px;
+  }
+  table.catalog tbody td { padding:13px 16px; font-size:13.5px; border-bottom:1px solid var(--navy-10); color:var(--navy); }
+  table.catalog tbody tr:last-child td { border-bottom:none; }
+  table.catalog tbody tr:hover { background:var(--cream); }
+  .status { display:inline-flex; padding:4px 10px; border-radius:999px; font-size:11px; font-weight:700; }
+  .status.available { background:rgba(34,150,90,.12); color:#1c7a4a; }
+  .status.out { background:rgba(200,60,60,.1); color:#a83232; }
+  .empty-state { text-align:center; padding:60px 20px; color:var(--navy-45); display:none; }
+  .note-box { background:var(--cream); border:1px dashed var(--navy-10); border-radius:var(--radius-md); padding:16px 18px; font-size:13px; color:var(--navy-70); margin-bottom:24px; }
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">تخطي إلى المحتوى</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">م</span>
+      <span class="brand-text"><b>مكتبة مدرسة الأمين (ب)</b><span>إدارة شمال التعليمية - بورسعيد</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false">☰</button>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="periodicals.html">الدوريات الشهرية</a></li>
+        <li><a href="catalog.html" aria-current="page">فهرس الكتب</a></li>
+        <li><a href="news.html">أخبار المكتبة</a></li>
+        <li><a href="contact.html">تواصل معنا</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" style="padding-bottom:30px;">
+    <div class="wrap">
+      <div class="eyebrow"><span class="line"></span>بحث وتصفح</div>
+      <h1>فهرس <span class="accent">الكتب</span></h1>
+      <p class="lead">ابحث بالعنوان أو المؤلف، أو صفِّ النتائج حسب التصنيف وتوفر النسخة.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+
+      <div class="note-box">
+        <b>ملاحظة:</b> البيانات الظاهرة هنا نماذج تجريبية لتوضيح شكل الفهرس. استبدلها ببيانات مقتنيات مكتبتكم الفعلية
+        من داخل مصفوفة <code>books</code> في نهاية هذه الصفحة — كل كتاب سطر واحد بنفس الصيغة.
+      </div>
+
+      <div class="filters">
+        <input type="search" id="searchInput" placeholder="ابحث بالعنوان أو المؤلف...">
+        <select id="categoryFilter">
+          <option value="">كل التصنيفات</option>
+        </select>
+        <select id="statusFilter">
+          <option value="">كل الحالات</option>
+          <option value="available">متاح</option>
+          <option value="out">غير متاح</option>
+        </select>
+      </div>
+
+      <div style="overflow-x:auto;">
+        <table class="catalog">
+          <thead>
+            <tr>
+              <th>العنوان</th>
+              <th>المؤلف</th>
+              <th>التصنيف</th>
+              <th>الحالة</th>
+            </tr>
+          </thead>
+          <tbody id="catalogBody"></tbody>
+        </table>
+      </div>
+      <div class="empty-state" id="emptyState">لا توجد نتائج مطابقة للبحث.</div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 مكتبة مدرسة الأمين (ب) - إدارة شمال التعليمية - بورسعيد. جميع الحقوق محفوظة.</p>
+    <ul class="footer-links">
+      <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="periodicals.html">الدوريات</a></li>
+      <li><a href="contact.html">تواصل معنا</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="assets/nav.js"></script>
+<script>
+  // نموذج بيانات تجريبي — استبدله ببيانات مكتبتكم الفعلية
+  const books = [
+    { title: "كليلة ودمنة", author: "ابن المقفع", category: "أدب", status: "available" },
+    { title: "مقدمة ابن خلدون", author: "ابن خلدون", category: "تاريخ", status: "available" },
+    { title: "الأيام", author: "طه حسين", category: "سيرة ذاتية", status: "available" },
+    { title: "موسوعة عالم الحيوان", author: "فريق تأليف", category: "علوم", status: "out" },
+    { title: "رحلة إلى مركز الأرض", author: "جول فيرن", category: "خيال علمي", status: "available" },
+    { title: "الرياضيات للمرحلة الإعدادية", author: "وزارة التربية والتعليم", category: "مناهج", status: "available" },
+  ];
+
+  const tbody = document.getElementById('catalogBody');
+  const searchInput = document.getElementById('searchInput');
+  const categoryFilter = document.getElementById('categoryFilter');
+  const statusFilter = document.getElementById('statusFilter');
+  const emptyState = document.getElementById('emptyState');
+
+  // تعبئة قائمة التصنيفات تلقائيًا من البيانات
+  [...new Set(books.map(b => b.category))].forEach(cat => {
+    const opt = document.createElement('option');
+    opt.value = cat; opt.textContent = cat;
+    categoryFilter.appendChild(opt);
+  });
+
+  function statusLabel(s) { return s === 'available' ? 'متاح' : 'غير متاح'; }
+
+  function render() {
+    const q = searchInput.value.trim().toLowerCase();
+    const cat = categoryFilter.value;
+    const status = statusFilter.value;
+
+    const filtered = books.filter(b => {
+      const matchesQ = !q || b.title.toLowerCase().includes(q) || b.author.toLowerCase().includes(q);
+      const matchesCat = !cat || b.category === cat;
+      const matchesStatus = !status || b.status === status;
+      return matchesQ && matchesCat && matchesStatus;
+    });
+
+    tbody.innerHTML = '';
+    filtered.forEach(b => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${b.title}</td>
+        <td>${b.author}</td>
+        <td>${b.category}</td>
+        <td><span class="status ${b.status}">${statusLabel(b.status)}</span></td>
+      `;
+      tbody.appendChild(tr);
+    });
+
+    emptyState.style.display = filtered.length ? 'none' : 'block';
+  }
+
+  [searchInput, categoryFilter, statusFilter].forEach(el => el.addEventListener('input', render));
+  render();
+</script>
+</body>
+</html>
